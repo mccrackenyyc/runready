@@ -2,7 +2,7 @@
 *Dress Smart. Run Better.*
 
 ## Mission
-RunReady eliminates the guesswork from running apparel selection by providing personalized, AI-driven clothing recommendations that adapt to weather conditions, personal preferences, and individual comfort history.
+RunReady eliminates the guesswork from running apparel selection by providing personalized, AI-driven clothing recommendations that adapt to weather conditions, personal preferences, and individual comfort history - helping runners of all levels dress smart and perform better.
 
 ## Architecture
 ![RunReady Architecture](docs/architecture/runready-architecture.svg)
