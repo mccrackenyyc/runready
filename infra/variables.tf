@@ -63,27 +63,3 @@ variable "subnets" {
     }), null)
   }))
 }
-
-# variable "vnet_address_space" {
-#   description = "Address space for the virtual network"
-#   type        = list(string)
-#   default     = ["10.100.0.0/16"]
-# }
-
-# variable "app_subnet_prefixes" {
-#   description = "Address prefixes for the app subnet"
-#   type        = list(string)
-#   default     = ["10.100.1.0/24"]
-# }
-
-# variable "data_subnet_prefixes" {
-#   description = "Address prefixes for the data subnet"
-#   type        = list(string)
-#   default     = ["10.100.2.0/24"]
-# }
-
-# variable "data_subnet_service_endpoints" {
-#   description = "Service endpoints for the data subnet"
-#   type        = list(string)
-#   default     = ["Microsoft.Sql", "Microsoft.Storage"]
-# }
