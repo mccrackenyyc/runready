@@ -30,4 +30,36 @@ variable "location" {
   description = "Azure region for resources"
   type        = string
   default     = "Canada Central"
+
+  validation {
+    condition = contains([
+      "Canada Central", "Canada East"
+    ], var.location)
+    error_message = "RunReady only supports Canadian regions: Canada Central, Canada East."
+  }
+}
+
+# ================================
+# 📌 Network Module Variables
+# ================================
+
+variable "vnet_address_space" {
+  description = "Address space for the virtual network"
+  type        = list(string)
+}
+
+variable "subnets" {
+  description = "Subnets to create"
+  type = map(object({
+    address_prefixes                  = list(string)
+    private_endpoint_network_policies = optional(string, "Enabled")
+    service_endpoints                 = optional(list(string), [])
+    delegation = optional(object({
+      name = string
+      service_delegation = object({
+        name    = string
+        actions = optional(list(string), [])
+      })
+    }), null)
+  }))
 }
