@@ -51,3 +51,21 @@ All resources are tagged with:
 ## Remote State
 
 This configuration uses Azure Storage backend for state management. State storage is created by the bootstrap configuration in `../bootstrap/`.
+
+## Network Architecture
+
+### Virtual Network Design
+- **Address Space**: Environment-specific CIDR blocks (10.100.0.0/16 for dev, 10.200.0.0/16 for prod)
+- **Subnet Strategy**: Purpose-based subnet segmentation
+
+### Subnet Configuration
+| Subnet | Purpose | Address Range | Service Endpoints |
+|--------|---------|---------------|-------------------|
+| `app` | Application services, container workloads | /24 | None |
+| `data` | Database and storage resources | /24 | Microsoft.Storage, Microsoft.Sql |
+
+### Design Decisions
+- **Canadian Data Residency**: All resources constrained to Canadian regions
+- **Environment Isolation**: Separate address spaces prevent cross-environment routing
+- **Service Endpoints**: Enabled on data subnet for secure Azure PaaS connectivity
+- **Private Endpoint Ready**: All subnets configured for private endpoint deployment
