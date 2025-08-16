@@ -29,4 +29,4 @@ A smart platform providing optimal running clothing recommendations based on:
 - **Development:** TBD
 
 ## License
-MIT License - See LICENSE file for details
+This project is licensed under the Polyform Noncommercial License 1.0.0. You may view, use, and adapt this code for personal or educational purposes. Commercial use is prohibited without prior written permission. See the [LICENSE](LICENSE) file for full terms.
